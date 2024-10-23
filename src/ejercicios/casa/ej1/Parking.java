@@ -2,6 +2,9 @@ package ejercicios.casa.ej1;
 
 import java.util.LinkedList;
 
+class Vehiculo{
+
+}
 public class Parking {
     LinkedList<Vehiculo> parking = new LinkedList<>();
     private final int CAPACIDAD = 5;

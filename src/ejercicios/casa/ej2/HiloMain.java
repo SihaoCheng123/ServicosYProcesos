@@ -1,59 +1,54 @@
 package ejercicios.casa.ej2;
 
+import java.util.LinkedList;
+
 public class HiloMain {
 
     public static void main(String[] args) {
 
         Puente puente = new Puente();
 
-        Thread cN1 = new Thread(()->{
-            Carro carroN1 = new Carro();
-            try{
-                while(true){
-                    carroN1.cruzar(puente);
-                    Thread.sleep(1000);
-                }
-            }catch (InterruptedException e){
-                System.out.println("Error: " + e);
-            }
-        });
-        Thread cN2 = new Thread(()->{
-            Carro carroN2 = new Carro();
-            try{
-                while(true){
-                    carroN2.cruzar(puente);
-                    Thread.sleep(1000);
-                }
-            }catch (InterruptedException e){
-                System.out.println("Error: " + e);
-            }
-        });
-        Thread cS1 = new Thread(()->{
-            Carro carroS1 = new Carro();
-            try{
-                while(true){
-                    carroS1.cruzar(puente);
-                    Thread.sleep(1000);
-                }
-            }catch (InterruptedException e){
-                System.out.println("Error: " + e);
-            }
-        });
-        Thread cS2 = new Thread(()->{
-            Carro carroS2 = new Carro();
-            try{
-                while(true){
-                    carroS2.cruzar(puente);
-                    Thread.sleep(1000);
-                }
-            }catch (InterruptedException e){
-                System.out.println("Error: " + e);
+        LinkedList<Carro> norte = new LinkedList<>();
+        LinkedList<Carro> sur = new LinkedList<>();
+
+        Thread carroN1 = new Thread(()->{
+            try {
+                puente.cruzarAlSur(norte, sur);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Error:" + e);
             }
         });
 
-        cN1.start();
-        cN2.start();
-        cS2.start();
-        cS2.start();
+        Thread carroN2 = new Thread(()->{
+            try {
+                puente.cruzarAlSur(norte, sur);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Error:" + e);
+            }
+        });
+        Thread carroS1 = new Thread(()->{
+            try {
+                puente.cruzarAlNorte(norte, sur);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Error:" + e);
+            }
+        });
+
+        Thread carroS2 = new Thread(()->{
+            try {
+                puente.cruzarAlNorte(norte, sur);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Error:" + e);
+            }
+        });
+
+        carroN1.start();
+        carroN2.start();
+        carroS1.start();
+        carroS2.start();
     }
 }

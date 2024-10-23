@@ -33,10 +33,6 @@ public class HiloMain {
             }
         });
 
-        Thread limiteCapacidad = new Thread(()->{
-
-        });
-
         entra.start();
         sale.start();
 
