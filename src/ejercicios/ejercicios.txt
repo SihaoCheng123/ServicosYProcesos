@@ -18,3 +18,18 @@ Ejercicio 3
 Crear un programa con dos hilos que deben imprimir una secuencia de numeros de manera alternad.
 El hilo 1 debe imprimir nº impares y el hilo 2 debe imprimir nº pares,
 asegurandose de que los n se impriman en el orden correcto. Hay que usar notify() y wait().
+
+
+Para casa:
+
+EJER1
+Crea un programa que simule la entrada y salida de vehículos de un estacionamiento con capacidad limitada.
+Un nº de hilos simularán los vehiculso que intentan entrar en el estacionamiento.
+SI está lleno, los vehículos deben esperar hasta que otro vehiculo salga
+(Se han de usar de 2 a 3 hilos)
+
+EJER2
+Imagina un puente estrecho por donde solo puede pasar un carro a la vez.
+Crea un programa donde dos tipos de carros(ejemplo: del norte y del sur) intentan cruzar el puente.
+El del norte debe esperar si un carro del sur está cruzando el puente y viceversa
+(Se usan 4 hilos; 2 para el norte y 2 para el sur)
