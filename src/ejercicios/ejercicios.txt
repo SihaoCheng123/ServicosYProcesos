@@ -33,3 +33,25 @@ Imagina un puente estrecho por donde solo puede pasar un carro a la vez.
 Crea un programa donde dos tipos de carros(ejemplo: del norte y del sur) intentan cruzar el puente.
 El del norte debe esperar si un carro del sur está cruzando el puente y viceversa
 (Se usan 4 hilos; 2 para el norte y 2 para el sur)
+
+EJER3**
+
+Crea un programa que simule un ascensor con una capacidad limitada de personas.
+Si el ascensor está lleno, las personas debem esperar hasta que haya espacio disponible para entrar
+
+
+EJER 4
+
+Imagina una carrera en la que los corredores (hilos) deben esperar hasta que el juez dé la señal de inicio(hilo principal).
+Los corredores solo pueden empezar cuando el juez los despierte utilizando notifyAll()
+
+EJER5**
+Simula una situacion donde varios hilos deben esperar en una barrera hasta que todos los hilos hayan alcanzado ese punto.
+Solo cuando todos los hilos hayan llegado a la barrera, todos pueden continuar al mismo tiempo
+(usar notifyAll())
+
+EJER6**
+Imagina que tienes varios trabajadores en una fábrica. Todos estan esperando a que se complete una tarea inicial
+(por ej, que llegue un material ), y una vez que esté listo, todos los trabajadores pueden empezar a trabajar
+de forma simultanea (usar notifyAll)
+

@@ -7,7 +7,7 @@ class Vehiculo{
 }
 public class Parking {
     LinkedList<Vehiculo> parking = new LinkedList<>();
-    private final int CAPACIDAD = 5;
+    private final int CAPACIDAD = 3;
 
     public void entrar(Vehiculo vehiculo) throws InterruptedException{
         synchronized (this){
@@ -28,6 +28,7 @@ public class Parking {
             while (this.parking.size() == CAPACIDAD){
                 this.parking.removeFirst();
                 System.out.println("Coche saliendo del parking");
+                Thread.sleep(1000);
             }
             notify();
         }
